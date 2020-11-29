@@ -1,7 +1,7 @@
 # BA-MA scraper
 A method to download records from the BA-MA archives, brought to you by PanzerPlace. 
 Although I have not found a Terms of Service explicitly forbidding the use of scrapers
-on the BA-MA, systematic downloading of records may hamper the Militär Archive's services. 
+on the BA-MA, systematic downloading of records may hamper the Militärarchive's services. 
 Please use this application wisely and only download what you really need.
 
 ### Prerequisites
@@ -10,7 +10,8 @@ Please use this application wisely and only download what you really need.
 
 ### How to use this applciation
 #### Step 1
-Browse to the record you'd like to download and press F12 to open Developer Tools. Now click on the Console tab and
+Browse to the record you'd like to download. Once you see the record browser, right-click it and select "This Frame > Show Only This Frame".
+After the page finishes loading, press F12 to open Developer Tools. Click the Console tab and
 type `window.Drupal.settings.islandoraInternetArchiveBookReader`. An object is dumped to the console as response.
 Right-click the object and select 'Copy Object'. Paste the contents to the `settings.json` file in the project directory.
 
