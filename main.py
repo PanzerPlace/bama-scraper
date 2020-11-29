@@ -61,14 +61,7 @@ for page in pages:
         'svc.rotate': '0'
     }
 
-    p2 = urllib.parse.urlencode(params)
-
-    params = '&url_ver=Z39.88-2004&svc_id=info%3Alanl-repo%2Fsvc%2FgetRegion' \
-             '&svc_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajpeg2000&svc.format=image%2Fjpeg&svc.level=5&svc.rotate=0'
-    download_uri = base_uri + djatoka_uri + '/resolver?rft_id=' + uri + '&' + p2
-
-    print(params)
-    print(p2)
+    download_uri = base_uri + djatoka_uri + '/resolver?rft_id=' + uri + '&' + urllib.parse.urlencode(params)
 
     # Download
     print('Processing page %d' % page_no)
@@ -78,7 +71,7 @@ for page in pages:
         with open(file_name, 'wb') as handler:
             handler.write(response.content)
     elif response.status_code == 403:
-        print('Reel ' + record + ', Incorrect or expired URI!')
+        print('Record %s, page %d: Incorrect or expired URI!' % (record, page_no))
     else:
-        print('Reel ' + record + ', Unknown connection error')
+        print('Record %s, page %d: Unknown connection error' % (record, page_no))
     time.sleep(.5)
