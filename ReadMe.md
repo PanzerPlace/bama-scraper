@@ -5,7 +5,14 @@ on the BA-MA, systematic downloading of records may hamper the Militärarchive's
 Please use this application wisely and only download what you really need.
 
 ### Prerequisites
-* Python3
+* [Python3](https://www.python.org/downloads/)
+* [requests](https://pypi.org/project/requests/)
+
+You can download requests using Python's pip package manager like so:
+
+```
+python -m pip install requests
+```
 
 
 ### How to use this applciation
